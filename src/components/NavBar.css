@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #DBDBDB;
+}
+
+.container input {
+  background-color: #FAFAFA;
+  border: 1px solid #DBDBDB;
+  border-radius: 3px;
+  text-align: center;
+  width: 215px;
+  height: 28px;
+}
+
+.container .container-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 957px;
+  height: 54px;
+  margin: 0 auto;
+  padding: 10px 16px;
+}
+
+.container .container-nav-bar .container-logo,
+.container .container-nav-bar .menu-icon-navbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
