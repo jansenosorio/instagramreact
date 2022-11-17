@@ -1,0 +1,13 @@
+.container-corpo {
+  box-sizing: border-box;
+  max-width: 957px;
+  margin: 0 auto;
+  margin-top: 34px;
+  padding: 0 14px;
+
+
+  display: grid;
+  grid-template-areas: 'firstColumn secondColumn';
+  grid-template-columns: 614px 293px;
+  gap: 29px;
+}
