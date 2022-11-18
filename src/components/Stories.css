@@ -16,11 +16,19 @@
 }
 
 .container-stories .stories-img {
+  width: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   cursor: pointer;
+}
+
+.container-stories .stories-img p {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 5px;
 }
 
 .container-stories .stories-img div {
