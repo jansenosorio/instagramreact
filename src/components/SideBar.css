@@ -1,0 +1,18 @@
+.container-sidebar {
+  width: 100%;
+}
+
+.container-sidebar .footer-menu {
+  font-weight: 400;
+  color: #C7C7C7;
+  font-size: 11px;
+  margin-bottom: 18px;
+  margin-top: 30px;
+}
+
+.container-sidebar .footer-sidebar {
+  font-weight: 400;
+  color: #C7C7C7;
+  font-size: 11px;
+  padding-bottom: 18px;
+}

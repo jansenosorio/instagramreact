@@ -2,8 +2,9 @@ import React from 'react'
 import './Corpo.css'
 import Stories from './Stories'
 import Posts from './Posts'
+import SideBar from './SideBar'
 
-function Corpo() {
+export default function Corpo() {
   return (
     <div className="container-corpo">
       <div className="container-column-1">
@@ -11,10 +12,10 @@ function Corpo() {
         <Posts />
       </div>
       <div className="container-column-2">
-        <div>SideBar</div>
+        <div>
+          <SideBar />
+        </div>
       </div>
     </div>
   )
 }
-
-export default Corpo

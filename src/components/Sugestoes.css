@@ -1,0 +1,53 @@
+.container-sugestions {
+  width: 100%;
+}
+
+.container-sugestions .header-sugestions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.container-sugestions .header-sugestions p {
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.container-sugestions .header-sugestions p:nth-child(1) {
+  color: #8E8E8E;
+}
+
+
+.container-sugestions .main-sugestions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.container-sugestions .main-sugestions p {
+  font-size: 12px;
+  font-weight: 500;
+  color: #139EF2;
+  cursor: pointer;
+}
+
+.container-sugestions .main-sugestions div:nth-child(1) {
+  display: flex;
+  gap: 10px;
+}
+
+.container-sugestions .main-sugestions div p:nth-child(1) {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  margin-bottom: 4px;
+}
+
+.container-sugestions .main-sugestions div p:nth-child(2) {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8E8E8E;
+}

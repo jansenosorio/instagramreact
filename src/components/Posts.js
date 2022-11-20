@@ -1,9 +1,9 @@
 import React from 'react'
 import './Posts.css'
-import { AiOutlineEllipsis, AiOutlineHeart } from 'react-icons/ai'
+import { AiOutlineEllipsis, AiTwotoneHeart } from 'react-icons/ai'
 import { IoChatbubbleOutline } from 'react-icons/io5'
 import { FiSend } from 'react-icons/fi'
-import { BsBookmark } from 'react-icons/bs'
+import { BsBookmark, BsHeart } from 'react-icons/bs'
 import { IconContext } from 'react-icons'
 
 export default function Posts() {
@@ -58,7 +58,7 @@ function PostsUser(props) {
         <div>
           <IconContext.Provider value={{ size: '22px' }}>
             <div>
-              <AiOutlineHeart />
+              <BsHeart />
             </div>
             <div>
               <IoChatbubbleOutline />
