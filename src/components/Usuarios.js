@@ -6,14 +6,28 @@ import { IconContext } from 'react-icons'
 export default function Usuarios() {
   const [img, setImg] = React.useState('/assets/catanacomics.svg')
   const [user, setUser] = React.useState('catanacomics')
-  const [name, setName] = React.useState('Catana')
+  const [name, setName] = React.useState('')
 
   function changeImage() {
-    setImg(prompt('Qual link da sua imagem?'))
+    let isImg = ''
+    while (isImg === '') {
+      isImg = prompt('Insira URL da imagem:')
+    }
+
+    if (isImg !== '') {
+      setImg(isImg)
+    } else setImg('/assets/catanacomics.svg')
   }
 
   function changeName() {
-    setName(prompt('Insina o novo nome'))
+    let isName = ''
+    while (isName === '') {
+      isName = prompt('Insina o novo nome')
+    }
+
+    if (isName !== '') {
+      setName(isName)
+    } else setName('Catana')
   }
 
   function changeUser() {
@@ -26,7 +40,7 @@ export default function Usuarios() {
       <div className="user-name">
         <p onClick={changeUser}>{user}</p>
         <p onClick={changeName} data-test="name">
-          {name}
+          {name === '' ? 'Catana' : name}
           <IconContext.Provider value={{ size: '10px' }}>
             <BsPencil data-test="edit-name" />
           </IconContext.Provider>
