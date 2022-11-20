@@ -21,14 +21,14 @@ export default function Usuarios() {
   }
 
   return (
-    <div className="container-user">
-      <img onClick={changeImage} src={img}></img>
+    <div className="container-user" data-test="user">
+      <img onClick={changeImage} src={img} data-test="profile-image"></img>
       <div className="user-name">
         <p onClick={changeUser}>{user}</p>
-        <p onClick={changeName}>
+        <p onClick={changeName} data-test="name">
           {name}
           <IconContext.Provider value={{ size: '10px' }}>
-            <BsPencil />
+            <BsPencil data-test="edit-name" />
           </IconContext.Provider>
         </p>
       </div>

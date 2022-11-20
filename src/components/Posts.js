@@ -3,7 +3,12 @@ import './Posts.css'
 import { AiOutlineEllipsis, AiTwotoneHeart } from 'react-icons/ai'
 import { IoChatbubbleOutline } from 'react-icons/io5'
 import { FiSend } from 'react-icons/fi'
-import { BsBookmark, BsHeart } from 'react-icons/bs'
+import {
+  BsBookmark,
+  BsHeart,
+  BsHeartFill,
+  BsFillBookmarkFill
+} from 'react-icons/bs'
 import { IconContext } from 'react-icons'
 
 export default function Posts() {
@@ -40,8 +45,37 @@ export default function Posts() {
 }
 
 function PostsUser(props) {
+  const [bookmark, setBookmark] = React.useState('oldIcon')
+  const [heart, setHeart] = React.useState('heart')
+  const [likes, setLikes] = React.useState(101.523)
+
+  function handleClickBookMark() {
+    if (bookmark == 'oldIcon') {
+      setBookmark('newIcon')
+    } else {
+      setBookmark('oldIcon')
+    }
+  }
+
+  function handleHeart() {
+    if (heart === 'heart') {
+      setHeart('newHeart')
+      setLikes(101.524)
+    } else {
+      setHeart('heart')
+      setLikes(101.523)
+    }
+  }
+
+  function handleHeartImg() {
+    if (heart === 'heart') {
+      setHeart('newHeart')
+      setLikes(101.524)
+    }
+  }
+
   return (
-    <div className="posts">
+    <div className="posts" data-test="post">
       <div className="post-header">
         <div>
           <img src={props.headerimgurl}></img>
@@ -53,12 +87,16 @@ function PostsUser(props) {
           </IconContext.Provider>
         </div>
       </div>
-      <img src={props.postimgurl}></img>
+      <img
+        src={props.postimgurl}
+        onClick={handleHeartImg}
+        data-test="post-image"
+      ></img>
       <div className="post-icons">
         <div>
           <IconContext.Provider value={{ size: '22px' }}>
-            <div>
-              <BsHeart />
+            <div onClick={handleHeart} data-test="like-post">
+              {heart == 'heart' ? <BsHeart /> : <BsHeartFill color="red" />}
             </div>
             <div>
               <IoChatbubbleOutline />
@@ -68,19 +106,29 @@ function PostsUser(props) {
             </div>
           </IconContext.Provider>
         </div>
-        <div>
-          <IconContext.Provider value={{ size: '22px' }}>
-            <BsBookmark />
-          </IconContext.Provider>
+        <div onClick={handleClickBookMark} data-test="save-post">
+          {bookmark == 'oldIcon' ? (
+            <BsBookmark size={22} />
+          ) : (
+            <BsFillBookmarkFill size={22} />
+          )}
         </div>
       </div>
       <div className="post-interaction">
         <img src={props.imgurllike}></img>
         <p>
           curtido por <span>{props.nameoflike}</span> e{' '}
-          <span>outras 101.523 pessoas</span>
+          <span>
+            outras <span data-test="like-number">{likes}</span> pessoas
+          </span>
         </p>
       </div>
     </div>
   )
+}
+
+{
+  /* <IconContext.Provider value={{ size: '22px' }}>
+            <BsBookmark />
+          </IconContext.Provider> */
 }
